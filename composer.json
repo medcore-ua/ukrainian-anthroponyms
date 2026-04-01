@@ -1,6 +1,6 @@
 {
     "name": "medcore-ua/ukrainian-anthroponyms",
-    "description": "PHP library for declension of Ukrainian anthroponyms.",
+    "description": "A PHP library for declension of Ukrainian anthroponyms in all 7 grammatical cases, with automatic gender detection.",
     "type": "library",
     "license": "LicenseRef-CSSM-Unlimited-2.0",
     "authors": [
