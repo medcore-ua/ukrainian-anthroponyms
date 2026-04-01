@@ -19,8 +19,5 @@
         "psr-4": {
             "MedCore\\UkrainianAnthroponyms\\": "src/"
         }
-    },
-    "suggest": {
-        "ext-mbstring": "For proper Unicode handling"
     }
 }
