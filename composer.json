@@ -2,7 +2,7 @@
     "name": "medcore-ua/ukrainian-anthroponyms",
     "description": "PHP library for declension of Ukrainian anthroponyms",
     "type": "library",
-    "license": "MIT",
+    "license": "LicenseRef-CSSM-Unlimited-2.0",
     "authors": [
         {
             "name": "Serhii Cherneha",
