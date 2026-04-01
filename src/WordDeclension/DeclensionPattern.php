@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\WordDeclension;
+namespace MedCore\UkrainianAnthroponyms\WordDeclension;
 
 class DeclensionPattern
 {

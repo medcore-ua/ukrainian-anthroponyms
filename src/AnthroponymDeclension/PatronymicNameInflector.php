@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\AnthroponymDeclension;
+namespace MedCore\UkrainianAnthroponyms\AnthroponymDeclension;
 
-use Shevchenko\Language\GrammaticalCase;
-use Shevchenko\Language\GrammaticalGender;
-use Shevchenko\WordDeclension\Enums\ApplicationType;
-use Shevchenko\WordDeclension\WordInflector;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalCase;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalGender;
+use MedCore\UkrainianAnthroponyms\WordDeclension\Enums\ApplicationType;
+use MedCore\UkrainianAnthroponyms\WordDeclension\WordInflector;
 
 class PatronymicNameInflector extends NameInflector
 {

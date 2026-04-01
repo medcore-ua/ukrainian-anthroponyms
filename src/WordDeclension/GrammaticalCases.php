@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\WordDeclension;
+namespace MedCore\UkrainianAnthroponyms\WordDeclension;
 
 class GrammaticalCases
 {
@@ -25,16 +25,16 @@ class GrammaticalCases
         $this->vocative = $data['vocative'] ?? [];
     }
 
-    public function forCase(\Shevchenko\Language\GrammaticalCase $case): array
+    public function forCase(\MedCore\UkrainianAnthroponyms\Language\GrammaticalCase $case): array
     {
         return match ($case) {
-            \Shevchenko\Language\GrammaticalCase::NOMINATIVE => $this->nominative,
-            \Shevchenko\Language\GrammaticalCase::GENITIVE => $this->genitive,
-            \Shevchenko\Language\GrammaticalCase::DATIVE => $this->dative,
-            \Shevchenko\Language\GrammaticalCase::ACCUSATIVE => $this->accusative,
-            \Shevchenko\Language\GrammaticalCase::ABLATIVE => $this->ablative,
-            \Shevchenko\Language\GrammaticalCase::LOCATIVE => $this->locative,
-            \Shevchenko\Language\GrammaticalCase::VOCATIVE => $this->vocative,
+            \MedCore\UkrainianAnthroponyms\Language\GrammaticalCase::NOMINATIVE => $this->nominative,
+            \MedCore\UkrainianAnthroponyms\Language\GrammaticalCase::GENITIVE => $this->genitive,
+            \MedCore\UkrainianAnthroponyms\Language\GrammaticalCase::DATIVE => $this->dative,
+            \MedCore\UkrainianAnthroponyms\Language\GrammaticalCase::ACCUSATIVE => $this->accusative,
+            \MedCore\UkrainianAnthroponyms\Language\GrammaticalCase::ABLATIVE => $this->ablative,
+            \MedCore\UkrainianAnthroponyms\Language\GrammaticalCase::LOCATIVE => $this->locative,
+            \MedCore\UkrainianAnthroponyms\Language\GrammaticalCase::VOCATIVE => $this->vocative,
         };
     }
 }

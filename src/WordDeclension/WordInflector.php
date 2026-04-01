@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\WordDeclension;
+namespace MedCore\UkrainianAnthroponyms\WordDeclension;
 
-use Shevchenko\Language\GrammaticalCase;
-use Shevchenko\Language\GrammaticalGender;
-use Shevchenko\Language\WordClass;
-use Shevchenko\WordDeclension\Enums\ApplicationType;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalCase;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalGender;
+use MedCore\UkrainianAnthroponyms\Language\WordClass;
+use MedCore\UkrainianAnthroponyms\WordDeclension\Enums\ApplicationType;
 
 class WordInflector
 {

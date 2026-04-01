@@ -1,11 +1,11 @@
 {
-    "name": "shevchenko/shevchenko-php",
+    "name": "medcore-ua/ukrainian-anthroponyms",
     "description": "PHP library for declension of Ukrainian anthroponyms",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Shevchenko\\": "src/"
+            "MedCore\\UkrainianAnthroponyms\\": "src/"
         },
         "files": [
             "src/WordDeclension/InflectionCommand.php",

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\Contracts;
+namespace MedCore\UkrainianAnthroponyms\Contracts;
 
 class DeclensionOutput
 {

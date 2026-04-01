@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\Contracts;
+namespace MedCore\UkrainianAnthroponyms\Contracts;
 
-use Shevchenko\Language\GrammaticalGender;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalGender;
 
 class DeclensionInput implements DeclensionInputInterface
 {

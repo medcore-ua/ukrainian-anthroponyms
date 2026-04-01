@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\GenderDetection;
+namespace MedCore\UkrainianAnthroponyms\GenderDetection;
 
 class GrammaticalGenderDetector
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\WordDeclension\Enums;
+namespace MedCore\UkrainianAnthroponyms\WordDeclension\Enums;
 
 enum InflectionCommandAction: string
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\WordDeclension;
+namespace MedCore\UkrainianAnthroponyms\WordDeclension;
 
-use Shevchenko\WordDeclension\Enums\InflectionCommandAction;
+use MedCore\UkrainianAnthroponyms\WordDeclension\Enums\InflectionCommandAction;
 
 class InflectionCommand
 {

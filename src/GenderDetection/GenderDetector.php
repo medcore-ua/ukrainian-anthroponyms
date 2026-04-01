@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\GenderDetection;
+namespace MedCore\UkrainianAnthroponyms\GenderDetection;
 
-use Shevchenko\Contracts\DeclensionInputInterface;
-use Shevchenko\Language\GrammaticalGender;
+use MedCore\UkrainianAnthroponyms\Contracts\DeclensionInputInterface;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalGender;
 
 class GenderDetector
 {

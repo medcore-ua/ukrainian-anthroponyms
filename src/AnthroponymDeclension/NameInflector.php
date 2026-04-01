@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\AnthroponymDeclension;
+namespace MedCore\UkrainianAnthroponyms\AnthroponymDeclension;
 
-use Shevchenko\Language\GrammaticalCase;
-use Shevchenko\Language\GrammaticalGender;
-use Shevchenko\WordDeclension\WordInflector;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalCase;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalGender;
+use MedCore\UkrainianAnthroponyms\WordDeclension\WordInflector;
 
 abstract class NameInflector
 {

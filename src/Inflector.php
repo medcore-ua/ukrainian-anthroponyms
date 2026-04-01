@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko;
+namespace MedCore\UkrainianAnthroponyms;
 
-use Shevchenko\AnthroponymDeclension\FamilyNameInflector;
-use Shevchenko\AnthroponymDeclension\GivenNameInflector;
-use Shevchenko\AnthroponymDeclension\PatronymicNameInflector;
-use Shevchenko\Contracts\DeclensionInput;
-use Shevchenko\Contracts\DeclensionInputInterface;
-use Shevchenko\Contracts\DeclensionOutput;
-use Shevchenko\GenderDetection\GenderDetector;
-use Shevchenko\Language\GrammaticalCase;
-use Shevchenko\Language\GrammaticalGender;
-use Shevchenko\WordDeclension\DeclensionRuleLoader;
-use Shevchenko\WordDeclension\WordInflector;
+use MedCore\UkrainianAnthroponyms\AnthroponymDeclension\FamilyNameInflector;
+use MedCore\UkrainianAnthroponyms\AnthroponymDeclension\GivenNameInflector;
+use MedCore\UkrainianAnthroponyms\AnthroponymDeclension\PatronymicNameInflector;
+use MedCore\UkrainianAnthroponyms\Contracts\DeclensionInput;
+use MedCore\UkrainianAnthroponyms\Contracts\DeclensionInputInterface;
+use MedCore\UkrainianAnthroponyms\Contracts\DeclensionOutput;
+use MedCore\UkrainianAnthroponyms\GenderDetection\GenderDetector;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalCase;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalGender;
+use MedCore\UkrainianAnthroponyms\WordDeclension\DeclensionRuleLoader;
+use MedCore\UkrainianAnthroponyms\WordDeclension\WordInflector;
 
-class Shevchenko
+class Inflector
 {
     private readonly GivenNameInflector $givenNameInflector;
     private readonly PatronymicNameInflector $patronymicNameInflector;

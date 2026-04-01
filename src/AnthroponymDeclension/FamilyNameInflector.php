@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\AnthroponymDeclension;
+namespace MedCore\UkrainianAnthroponyms\AnthroponymDeclension;
 
-use Shevchenko\Language\GrammaticalCase;
-use Shevchenko\Language\GrammaticalGender;
-use Shevchenko\Language\Linguistics;
-use Shevchenko\Language\WordClass;
-use Shevchenko\WordDeclension\Enums\ApplicationType;
-use Shevchenko\WordDeclension\WordInflector;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalCase;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalGender;
+use MedCore\UkrainianAnthroponyms\Language\Linguistics;
+use MedCore\UkrainianAnthroponyms\Language\WordClass;
+use MedCore\UkrainianAnthroponyms\WordDeclension\Enums\ApplicationType;
+use MedCore\UkrainianAnthroponyms\WordDeclension\WordInflector;
 
 class FamilyNameInflector extends NameInflector
 {

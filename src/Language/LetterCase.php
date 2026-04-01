@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\Language;
+namespace MedCore\UkrainianAnthroponyms\Language;
 
 final class LetterCase
 {

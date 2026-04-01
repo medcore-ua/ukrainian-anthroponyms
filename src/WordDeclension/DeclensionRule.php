@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\WordDeclension;
+namespace MedCore\UkrainianAnthroponyms\WordDeclension;
 
-use Shevchenko\Language\WordClass;
+use MedCore\UkrainianAnthroponyms\Language\WordClass;
 
 class DeclensionRule
 {

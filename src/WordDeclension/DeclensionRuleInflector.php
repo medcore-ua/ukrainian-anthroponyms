@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Shevchenko\WordDeclension;
+namespace MedCore\UkrainianAnthroponyms\WordDeclension;
 
-use Shevchenko\Language\GrammaticalCase;
-use Shevchenko\Language\LetterCase;
-use Shevchenko\WordDeclension\Enums\InflectionCommandAction;
+use MedCore\UkrainianAnthroponyms\Language\GrammaticalCase;
+use MedCore\UkrainianAnthroponyms\Language\LetterCase;
+use MedCore\UkrainianAnthroponyms\WordDeclension\Enums\InflectionCommandAction;
 
 class DeclensionRuleInflector
 {
