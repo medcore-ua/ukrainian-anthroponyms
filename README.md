@@ -1,5 +1,9 @@
 # Ukrainian Anthroponyms PHP
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/medcore-ua/ukrainian-anthroponyms.svg?label=Packagist&logo=packagist)](https://packagist.org/packages/medcore-ua/ukrainian-anthroponyms)
+[![Total Downloads](https://img.shields.io/packagist/dt/medcore-ua/ukrainian-anthroponyms.svg?label=Downloads&logo=packagist)](https://packagist.org/packages/medcore-ua/ukrainian-anthroponyms)
+[![License](https://img.shields.io/packagist/l/medcore-ua/ukrainian-anthroponyms.svg?label=Licence&logo=open-source-initiative)](https://packagist.org/packages/medcore-ua/ukrainian-anthroponyms)
+
 A PHP library for declension of Ukrainian anthroponyms (names, patronymics, and surnames) in all 7 grammatical cases. This is a PHP port of the original JavaScript library [shevchenko-js](https://github.com/tooleks/shevchenko-js).
 
 ## Features
