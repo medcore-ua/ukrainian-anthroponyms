@@ -1,6 +1,6 @@
 # Ukrainian Anthroponyms PHP
 
-A PHP library for declension of Ukrainian anthroponyms (names, patronymics, and surnames) in all 7 grammatical cases.
+A PHP library for declension of Ukrainian anthroponyms (names, patronymics, and surnames) in all 7 grammatical cases. This is a PHP port of the original JavaScript library [shevchenko-js](https://github.com/tooleks/shevchenko-js).
 
 ## Features
 
