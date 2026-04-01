@@ -1,4 +1,4 @@
-# Ukrainian Anthroponyms
+# Ukrainian Anthroponyms PHP
 
 A PHP library for declension of Ukrainian anthroponyms (names, patronymics, and surnames) in all 7 grammatical cases.
 
