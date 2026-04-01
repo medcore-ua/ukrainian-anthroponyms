@@ -1,6 +1,6 @@
 {
     "name": "medcore-ua/ukrainian-anthroponyms",
-    "description": "PHP library for declension of Ukrainian anthroponyms",
+    "description": "PHP library for declension of Ukrainian anthroponyms.",
     "type": "library",
     "license": "LicenseRef-CSSM-Unlimited-2.0",
     "authors": [
