@@ -44,7 +44,7 @@ $result = $inflector->inVocative($input);
 
 echo $result->givenName;      // Тарасе
 echo $result->patronymicName; // Григоровичу
-echo $result->familyName;    // Шевченку
+echo $result->familyName;     // Шевченку
 ```
 
 ### Declension in All Cases
@@ -57,13 +57,13 @@ $input = new DeclensionInput(
     'Коваленко'
 );
 
-echo $inflector->inNominative($input)->givenName;   // Олександр
+echo $inflector->inNominative($input)->givenName; // Олександр
 echo $inflector->inGenitive($input)->givenName;   // Олександра
-echo $inflector->inDative($input)->givenName;    // Олександру
+echo $inflector->inDative($input)->givenName;     // Олександру
 echo $inflector->inAccusative($input)->givenName; // Олександра
-echo $inflector->inAblative($input)->givenName;  // Олександром
-echo $inflector->inLocative($input)->givenName;  // Олександрові
-echo $inflector->inVocative($input)->givenName;  // Олександре
+echo $inflector->inAblative($input)->givenName;   // Олександром
+echo $inflector->inLocative($input)->givenName;   // Олександрові
+echo $inflector->inVocative($input)->givenName;   // Олександре
 ```
 
 ### Automatic Gender Detection
