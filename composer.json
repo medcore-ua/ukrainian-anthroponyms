@@ -6,15 +6,7 @@
     "autoload": {
         "psr-4": {
             "MedCore\\UkrainianAnthroponyms\\": "src/"
-        },
-        "files": [
-            "src/WordDeclension/InflectionCommand.php",
-            "src/WordDeclension/DeclensionRule.php",
-            "src/WordDeclension/DeclensionPattern.php",
-            "src/WordDeclension/GrammaticalCases.php",
-            "src/WordDeclension/InflectionCommandRunnerInterface.php",
-            "src/WordDeclension/CommandRunners.php"
-        ]
+        }
     },
     "require": {
         "php": "^8.1"
