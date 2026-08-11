@@ -19,15 +19,15 @@ abstract class NameInflector
         GrammaticalGender $gender,
         GrammaticalCase $grammaticalCase,
         bool $isLastWord = true,
-    ): string;
+    ) : string;
 
     public function inflect(
         ?string $name,
         GrammaticalGender $gender,
         GrammaticalCase $grammaticalCase,
         bool $isLastWord = true,
-    ): ?string {
-        if ($name === null) {
+    ) : ?string {
+        if (null === $name) {
             return null;
         }
 

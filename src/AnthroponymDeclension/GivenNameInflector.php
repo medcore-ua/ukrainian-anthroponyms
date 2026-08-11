@@ -21,7 +21,7 @@ class GivenNameInflector extends NameInflector
         GrammaticalGender $gender,
         GrammaticalCase $grammaticalCase,
         bool $isLastWord = true,
-    ): string {
+    ) : string {
         return $this->wordInflector->inflect(
             $givenName,
             $grammaticalCase,

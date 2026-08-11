@@ -25,7 +25,7 @@ class GrammaticalCases
         $this->vocative = $data['vocative'] ?? [];
     }
 
-    public function forCase(\MedCore\UkrainianAnthroponyms\Language\GrammaticalCase $case): array
+    public function forCase(\MedCore\UkrainianAnthroponyms\Language\GrammaticalCase $case) : array
     {
         return match ($case) {
             \MedCore\UkrainianAnthroponyms\Language\GrammaticalCase::NOMINATIVE => $this->nominative,

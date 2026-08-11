@@ -28,18 +28,18 @@ class GenderDetector
         );
     }
 
-    public function detect(DeclensionInputInterface $input): ?GrammaticalGender
+    public function detect(DeclensionInputInterface $input) : ?GrammaticalGender
     {
-        if ($input->getPatronymicName() !== null) {
+        if (null !== $input->getPatronymicName()) {
             $result = $this->patronymicNameDetector->detect(mb_strtolower($input->getPatronymicName(), 'UTF-8'));
-            if ($result !== null) {
+            if (null !== $result) {
                 return GrammaticalGender::from($result);
             }
         }
 
-        if ($input->getGivenName() !== null) {
+        if (null !== $input->getGivenName()) {
             $result = $this->givenNameDetector->detect(mb_strtolower($input->getGivenName(), 'UTF-8'));
-            if ($result !== null) {
+            if (null !== $result) {
                 return GrammaticalGender::from($result);
             }
         }

@@ -21,7 +21,7 @@ class PatronymicNameInflector extends NameInflector
         GrammaticalGender $gender,
         GrammaticalCase $grammaticalCase,
         bool $isLastWord = true,
-    ): string {
+    ) : string {
         return $this->wordInflector->inflect(
             $patronymicName,
             $grammaticalCase,

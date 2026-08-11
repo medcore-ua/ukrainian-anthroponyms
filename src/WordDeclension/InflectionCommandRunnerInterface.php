@@ -6,5 +6,5 @@ namespace MedCore\UkrainianAnthroponyms\WordDeclension;
 
 interface InflectionCommandRunnerInterface
 {
-    public function exec(string $value): string;
+    public function exec(string $value) : string;
 }

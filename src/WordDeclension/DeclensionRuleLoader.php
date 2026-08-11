@@ -10,7 +10,7 @@ use MedCore\UkrainianAnthroponyms\Language\WordClass;
 class DeclensionRuleLoader
 {
     /** @return array<DeclensionRule> */
-    public static function loadFromFile(string $filePath): array
+    public static function loadFromFile(string $filePath) : array
     {
         $json = file_get_contents($filePath);
         $data = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
@@ -19,7 +19,7 @@ class DeclensionRuleLoader
     }
 
     /** @param array<string, mixed> $data */
-    private static function parseRule(array $data): DeclensionRule
+    private static function parseRule(array $data) : DeclensionRule
     {
         return new DeclensionRule(
             description: $data['description'],

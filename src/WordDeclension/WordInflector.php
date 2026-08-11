@@ -16,7 +16,7 @@ class WordInflector
 
     public function __construct(array $rules)
     {
-        usort($rules, fn(DeclensionRule $a, DeclensionRule $b) => $b->priority - $a->priority);
+        usort($rules, fn (DeclensionRule $a, DeclensionRule $b) => $b->priority - $a->priority);
         $this->rules = $rules;
     }
 
@@ -26,7 +26,7 @@ class WordInflector
         GrammaticalGender $gender,
         ?WordClass $wordClass = null,
         ?ApplicationType $applicationType = null,
-    ): string {
+    ) : string {
         $matchingRules = $this->findMatchingRules($word, $grammaticalCase, $gender, $wordClass, $applicationType);
 
         if (empty($matchingRules)) {
@@ -44,7 +44,7 @@ class WordInflector
         GrammaticalGender $gender,
         ?WordClass $wordClass,
         ?ApplicationType $applicationType,
-    ): array {
+    ) : array {
         return array_values(array_filter($this->rules, function (DeclensionRule $rule) use ($word, $gender, $wordClass, $applicationType) {
             // Gender check
             if (!in_array($gender, $rule->gender, true)) {
@@ -52,9 +52,9 @@ class WordInflector
             }
 
             // Application type check
-            if ($applicationType !== null) {
+            if (null !== $applicationType) {
                 if (!empty($rule->applicationType)) {
-                    $appTypes = array_map(fn($t) => ApplicationType::from($t), $rule->applicationType);
+                    $appTypes = array_map(fn ($t) => ApplicationType::from($t), $rule->applicationType);
                     if (!in_array($applicationType, $appTypes, true)) {
                         return false;
                     }
@@ -68,7 +68,7 @@ class WordInflector
             }
 
             // WordClass check
-            if ($wordClass !== null && $rule->wordClass !== $wordClass) {
+            if (null !== $wordClass && $rule->wordClass !== $wordClass) {
                 return false;
             }
 

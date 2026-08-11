@@ -10,7 +10,7 @@ class ReplaceCommandRunner implements InflectionCommandRunnerInterface
         private readonly InflectionCommand $command,
     ) {}
 
-    public function exec(string $value): string
+    public function exec(string $value) : string
     {
         return $this->command->value;
     }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace MedCore\UkrainianAnthroponyms\Language;
 
-enum GrammaticalCase: string
+enum GrammaticalCase : string
 {
     case NOMINATIVE = 'nominative';
     case GENITIVE = 'genitive';

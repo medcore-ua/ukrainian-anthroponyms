@@ -14,7 +14,7 @@ class DeclensionRuleInflector
         private readonly DeclensionRule $rule,
     ) {}
 
-    public function inflect(string $word, GrammaticalCase $grammaticalCase): string
+    public function inflect(string $word, GrammaticalCase $grammaticalCase) : string
     {
         $commandsArray = $this->rule->grammaticalCases->forCase($grammaticalCase);
 
@@ -29,17 +29,17 @@ class DeclensionRuleInflector
 
         $modify = $this->rule->pattern->modify;
         $searchPattern = '/' . $modify . '/iu';
-        
-        $inflectedWord = preg_replace_callback($searchPattern, function (array $matches) use ($commands): string {
+
+        $inflectedWord = preg_replace_callback($searchPattern, function (array $matches) use ($commands) : string {
             $replacer = '';
             $groupCount = count($matches) - 1;
-            
+
             for ($groupIndex = 0; $groupIndex < $groupCount; $groupIndex++) {
                 $value = $matches[$groupIndex + 1] ?? '';
-                
+
                 $commandKey = (string) $groupIndex;
                 $debugKey = $commandKey;
-                
+
                 // Try both string and int keys
                 $commandData = null;
                 if (isset($commands[$debugKey])) {
@@ -47,24 +47,24 @@ class DeclensionRuleInflector
                 } elseif (isset($commands[$groupIndex])) {
                     $commandData = $commands[$groupIndex];
                 }
-                
-                if ($commandData !== null && isset($commandData['action']) && isset($commandData['value'])) {
+
+                if (null !== $commandData && isset($commandData['action']) && isset($commandData['value'])) {
                     $command = new InflectionCommand(
                         InflectionCommandAction::from($commandData['action']),
                         $commandData['value']
                     );
-                    
+
                     $runner = match ($command->action) {
                         InflectionCommandAction::REPLACE => new ReplaceCommandRunner($command),
                         InflectionCommandAction::APPEND => new AppendCommandRunner($command),
                     };
-                    
+
                     $value = $runner->exec($value);
                 }
-                
+
                 $replacer .= $value;
             }
-            
+
             return $replacer;
         }, $word);
 

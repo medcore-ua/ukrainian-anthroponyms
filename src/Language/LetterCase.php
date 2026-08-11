@@ -6,7 +6,7 @@ namespace MedCore\UkrainianAnthroponyms\Language;
 
 final class LetterCase
 {
-    public static function copyLetterCase(string $templateWord, string $targetWord): string
+    public static function copyLetterCase(string $templateWord, string $targetWord) : string
     {
         $result = '';
         $templateLength = mb_strlen($templateWord);
@@ -29,12 +29,12 @@ final class LetterCase
         return $result;
     }
 
-    private static function isUpperCase(string $letter): bool
+    private static function isUpperCase(string $letter) : bool
     {
         return $letter === mb_strtoupper($letter, 'UTF-8');
     }
 
-    private static function isLowerCase(string $letter): bool
+    private static function isLowerCase(string $letter) : bool
     {
         return $letter === mb_strtolower($letter, 'UTF-8');
     }

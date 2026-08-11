@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace MedCore\UkrainianAnthroponyms\WordDeclension\Enums;
 
-enum ApplicationType: string
+enum ApplicationType : string
 {
     case GIVEN_NAME = 'givenName';
     case PATRONYMIC_NAME = 'patronymicName';

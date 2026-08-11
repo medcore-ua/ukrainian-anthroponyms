@@ -11,7 +11,7 @@ class GrammaticalGenderDetector
         private readonly string $femininePattern,
     ) {}
 
-    public function detect(string $name): ?string
+    public function detect(string $name) : ?string
     {
         if (preg_match('/(' . $this->masculinePattern . ')$/iu', $name)) {
             return 'masculine';

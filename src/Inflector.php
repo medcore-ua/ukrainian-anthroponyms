@@ -7,7 +7,6 @@ namespace MedCore\UkrainianAnthroponyms;
 use MedCore\UkrainianAnthroponyms\AnthroponymDeclension\FamilyNameInflector;
 use MedCore\UkrainianAnthroponyms\AnthroponymDeclension\GivenNameInflector;
 use MedCore\UkrainianAnthroponyms\AnthroponymDeclension\PatronymicNameInflector;
-use MedCore\UkrainianAnthroponyms\Contracts\DeclensionInput;
 use MedCore\UkrainianAnthroponyms\Contracts\DeclensionInputInterface;
 use MedCore\UkrainianAnthroponyms\Contracts\DeclensionOutput;
 use MedCore\UkrainianAnthroponyms\GenderDetection\GenderDetector;
@@ -34,47 +33,47 @@ class Inflector
         $this->genderDetector = new GenderDetector();
     }
 
-    public function inNominative(DeclensionInputInterface $input): DeclensionOutput
+    public function inNominative(DeclensionInputInterface $input) : DeclensionOutput
     {
         return $this->inflect($input, GrammaticalCase::NOMINATIVE);
     }
 
-    public function inGenitive(DeclensionInputInterface $input): DeclensionOutput
+    public function inGenitive(DeclensionInputInterface $input) : DeclensionOutput
     {
         return $this->inflect($input, GrammaticalCase::GENITIVE);
     }
 
-    public function inDative(DeclensionInputInterface $input): DeclensionOutput
+    public function inDative(DeclensionInputInterface $input) : DeclensionOutput
     {
         return $this->inflect($input, GrammaticalCase::DATIVE);
     }
 
-    public function inAccusative(DeclensionInputInterface $input): DeclensionOutput
+    public function inAccusative(DeclensionInputInterface $input) : DeclensionOutput
     {
         return $this->inflect($input, GrammaticalCase::ACCUSATIVE);
     }
 
-    public function inAblative(DeclensionInputInterface $input): DeclensionOutput
+    public function inAblative(DeclensionInputInterface $input) : DeclensionOutput
     {
         return $this->inflect($input, GrammaticalCase::ABLATIVE);
     }
 
-    public function inLocative(DeclensionInputInterface $input): DeclensionOutput
+    public function inLocative(DeclensionInputInterface $input) : DeclensionOutput
     {
         return $this->inflect($input, GrammaticalCase::LOCATIVE);
     }
 
-    public function inVocative(DeclensionInputInterface $input): DeclensionOutput
+    public function inVocative(DeclensionInputInterface $input) : DeclensionOutput
     {
         return $this->inflect($input, GrammaticalCase::VOCATIVE);
     }
 
-    public function detectGender(DeclensionInputInterface $input): ?GrammaticalGender
+    public function detectGender(DeclensionInputInterface $input) : ?GrammaticalGender
     {
         return $this->genderDetector->detect($input);
     }
 
-    private function inflect(DeclensionInputInterface $input, GrammaticalCase $case): DeclensionOutput
+    private function inflect(DeclensionInputInterface $input, GrammaticalCase $case) : DeclensionOutput
     {
         $gender = $input->getGender();
 

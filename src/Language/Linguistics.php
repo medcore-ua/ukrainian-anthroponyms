@@ -8,14 +8,14 @@ final class Linguistics
 {
     private const VOWEL_PATTERN = '/[аоуеиіяюєї]/iu';
 
-    public static function countSyllables(string $word): int
+    public static function countSyllables(string $word) : int
     {
         preg_match_all(self::VOWEL_PATTERN, $word, $matches);
         return count($matches[0]);
     }
 
-    public static function isMonosyllable(string $word): bool
+    public static function isMonosyllable(string $word) : bool
     {
-        return self::countSyllables($word) === 1;
+        return 1 === self::countSyllables($word);
     }
 }

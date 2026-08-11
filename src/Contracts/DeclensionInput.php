@@ -15,27 +15,27 @@ class DeclensionInput implements DeclensionInputInterface
         private readonly ?string $familyName = null,
     ) {}
 
-    public function getGender(): GrammaticalGender
+    public function getGender() : GrammaticalGender
     {
         return $this->gender;
     }
 
-    public function getGivenName(): ?string
+    public function getGivenName() : ?string
     {
         return $this->givenName;
     }
 
-    public function getPatronymicName(): ?string
+    public function getPatronymicName() : ?string
     {
         return $this->patronymicName;
     }
 
-    public function getFamilyName(): ?string
+    public function getFamilyName() : ?string
     {
         return $this->familyName;
     }
 
-    public function withGender(GrammaticalGender $gender): self
+    public function withGender(GrammaticalGender $gender) : self
     {
         return new self(
             $gender,

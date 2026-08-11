@@ -26,7 +26,7 @@ class FamilyNameInflector extends NameInflector
         GrammaticalGender $gender,
         GrammaticalCase $grammaticalCase,
         bool $isLastWord = true,
-    ): string {
+    ) : string {
         if (!$isLastWord && Linguistics::isMonosyllable($familyName)) {
             return $familyName;
         }
@@ -42,13 +42,13 @@ class FamilyNameInflector extends NameInflector
         );
     }
 
-    private function determineWordClass(string $familyName, GrammaticalGender $gender): WordClass
+    private function determineWordClass(string $familyName, GrammaticalGender $gender) : WordClass
     {
-        if ($gender === GrammaticalGender::FEMININE && preg_match(self::UNCERTAIN_FEMININE_PATTERN, $familyName)) {
+        if (GrammaticalGender::FEMININE === $gender && preg_match(self::UNCERTAIN_FEMININE_PATTERN, $familyName)) {
             return WordClass::ADJECTIVE;
         }
 
-        if ($gender === GrammaticalGender::MASCULINE && preg_match(self::UNCERTAIN_MASCULINE_PATTERN, $familyName)) {
+        if (GrammaticalGender::MASCULINE === $gender && preg_match(self::UNCERTAIN_MASCULINE_PATTERN, $familyName)) {
             return WordClass::ADJECTIVE;
         }
 
