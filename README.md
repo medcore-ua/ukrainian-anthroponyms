@@ -1,3 +1,5 @@
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg)](https://stand-with-ukraine.pp.ua)
+
 # Ukrainian Anthroponyms PHP
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/medcore-ua/ukrainian-anthroponyms.svg?label=Packagist&logo=packagist)](https://packagist.org/packages/medcore-ua/ukrainian-anthroponyms)
