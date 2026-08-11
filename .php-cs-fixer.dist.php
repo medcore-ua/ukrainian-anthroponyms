@@ -27,7 +27,7 @@ return (new Config())
         'trim_array_spaces' => true,
         'no_whitespace_in_blank_line' => true,
         'no_trailing_whitespace' => true,
-        'single_blank_line_at_eof' => true,
+        'single_blank_line_at_eof' => false,
         'ordered_imports' => [
             'sort_algorithm' => 'alpha',
             'imports_order' => ['class', 'function', 'const'],
