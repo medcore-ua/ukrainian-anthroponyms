@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class AppendCommandRunnerTest extends TestCase
 {
-    public function testExec(): void
+    public function testExec() : void
     {
         $command = new InflectionCommand(InflectionCommandAction::APPEND, 'а');
         $runner = new AppendCommandRunner($command);

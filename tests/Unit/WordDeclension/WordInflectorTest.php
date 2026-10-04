@@ -11,11 +11,11 @@ use PHPUnit\Framework\TestCase;
 
 class WordInflectorTest extends TestCase
 {
-    public function testInflectWithNoRulesReturnsOriginalWord(): void
+    public function testInflectWithNoRulesReturnsOriginalWord() : void
     {
         $inflector = new WordInflector([]);
         $result = $inflector->inflect('Тест', GrammaticalCase::GENITIVE, GrammaticalGender::MASCULINE);
-        
+
         $this->assertEquals('Тест', $result);
     }
 }

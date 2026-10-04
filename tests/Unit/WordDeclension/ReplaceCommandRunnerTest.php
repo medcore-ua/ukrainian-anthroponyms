@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class ReplaceCommandRunnerTest extends TestCase
 {
-    public function testExec(): void
+    public function testExec() : void
     {
         $command = new InflectionCommand(InflectionCommandAction::REPLACE, 'а');
         $runner = new ReplaceCommandRunner($command);

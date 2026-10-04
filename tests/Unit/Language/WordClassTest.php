@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class WordClassTest extends TestCase
 {
-    public function testEnumValues(): void
+    public function testEnumValues() : void
     {
         $this->assertEquals('noun', WordClass::NOUN->value);
     }

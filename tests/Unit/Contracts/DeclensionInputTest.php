@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class DeclensionInputTest extends TestCase
 {
-    public function testInputGetters(): void
+    public function testInputGetters() : void
     {
         $input = new DeclensionInput(
             GrammaticalGender::MASCULINE,
@@ -25,7 +25,7 @@ class DeclensionInputTest extends TestCase
         $this->assertEquals('Іванов', $input->getFamilyName());
     }
 
-    public function testWithGender(): void
+    public function testWithGender() : void
     {
         $input = new DeclensionInput(
             GrammaticalGender::FEMININE,

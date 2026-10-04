@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class LinguisticsTest extends TestCase
 {
-    public function testIsMonosyllable(): void
+    public function testIsMonosyllable() : void
     {
         $this->assertTrue(Linguistics::isMonosyllable('Кім'));
         $this->assertFalse(Linguistics::isMonosyllable('Тарас'));

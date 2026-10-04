@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class InflectionCommandTest extends TestCase
 {
-    public function testProperties(): void
+    public function testProperties() : void
     {
         $command = new InflectionCommand(InflectionCommandAction::APPEND, 'value');
         $this->assertEquals(InflectionCommandAction::APPEND, $command->action);

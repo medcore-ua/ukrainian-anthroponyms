@@ -13,12 +13,12 @@ use PHPUnit\Framework\TestCase;
 
 class GivenNameInflectorTest extends TestCase
 {
-    public function testInflectGivenName(): void
+    public function testInflectGivenName() : void
     {
         $rules = DeclensionRuleLoader::loadFromFile(__DIR__ . '/../../../rules/declension-rules.json');
         $wordInflector = new WordInflector($rules);
         $inflector = new GivenNameInflector($wordInflector);
-        
+
         $result = $inflector->inflect('Тарас', GrammaticalGender::MASCULINE, GrammaticalCase::GENITIVE);
         $this->assertEquals('Тараса', $result);
     }

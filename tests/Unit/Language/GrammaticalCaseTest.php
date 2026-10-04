@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class GrammaticalCaseTest extends TestCase
 {
-    public function testEnumValues(): void
+    public function testEnumValues() : void
     {
         $this->assertEquals('nominative', GrammaticalCase::NOMINATIVE->value);
     }

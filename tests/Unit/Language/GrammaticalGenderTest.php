@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class GrammaticalGenderTest extends TestCase
 {
-    public function testEnumValues(): void
+    public function testEnumValues() : void
     {
         $this->assertEquals('masculine', GrammaticalGender::MASCULINE->value);
     }

@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class GrammaticalCasesTest extends TestCase
 {
-    public function testForCase(): void
+    public function testForCase() : void
     {
         $cases = new GrammaticalCases(['genitive' => ['test']]);
         $this->assertEquals(['test'], $cases->forCase(GrammaticalCase::GENITIVE));

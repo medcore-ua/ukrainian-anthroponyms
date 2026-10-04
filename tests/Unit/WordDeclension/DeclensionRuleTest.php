@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class DeclensionRuleTest extends TestCase
 {
-    public function testProperties(): void
+    public function testProperties() : void
     {
         $cases = new GrammaticalCases([]);
         $pattern = new DeclensionPattern('f', 'm');

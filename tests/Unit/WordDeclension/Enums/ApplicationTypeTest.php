@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class ApplicationTypeTest extends TestCase
 {
-    public function testEnumValues(): void
+    public function testEnumValues() : void
     {
         $this->assertEquals('givenName', ApplicationType::GIVEN_NAME->value);
     }

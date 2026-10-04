@@ -13,22 +13,22 @@ class InflectorTest extends TestCase
 {
     private Inflector $inflector;
 
-    protected function setUp(): void
+    protected function setUp() : void
     {
         $this->inflector = new Inflector();
     }
 
-    public function testInNominativeForMale(): void
+    public function testInNominativeForMale() : void
     {
         $input = new DeclensionInput(GrammaticalGender::MASCULINE, 'Тарас', 'Григорович', 'Шевченко');
         $output = $this->inflector->inNominative($input);
-        
+
         $this->assertEquals('Тарас', $output->givenName);
         $this->assertEquals('Григорович', $output->patronymicName);
         $this->assertEquals('Шевченко', $output->familyName);
     }
 
-    public function testInGenitiveForMale(): void
+    public function testInGenitiveForMale() : void
     {
         $input = new DeclensionInput(GrammaticalGender::MASCULINE, 'Тарас', 'Григорович', 'Шевченко');
         $output = $this->inflector->inGenitive($input);
@@ -38,7 +38,7 @@ class InflectorTest extends TestCase
         $this->assertEquals('Шевченка', $output->familyName);
     }
 
-    public function testInDativeForFemale(): void
+    public function testInDativeForFemale() : void
     {
         $input = new DeclensionInput(GrammaticalGender::FEMININE, 'Леся', 'Петрівна', 'Українка');
         $output = $this->inflector->inDative($input);
@@ -48,7 +48,7 @@ class InflectorTest extends TestCase
         $this->assertEquals('Українкій', $output->familyName);
     }
 
-    public function testInAccusativeForMale(): void
+    public function testInAccusativeForMale() : void
     {
         $input = new DeclensionInput(GrammaticalGender::MASCULINE, 'Тарас', 'Григорович', 'Шевченко');
         $output = $this->inflector->inAccusative($input);
@@ -58,7 +58,7 @@ class InflectorTest extends TestCase
         $this->assertEquals('Шевченка', $output->familyName);
     }
 
-    public function testInAblativeForMale(): void
+    public function testInAblativeForMale() : void
     {
         $input = new DeclensionInput(GrammaticalGender::MASCULINE, 'Тарас', 'Григорович', 'Шевченко');
         $output = $this->inflector->inAblative($input);
@@ -68,7 +68,7 @@ class InflectorTest extends TestCase
         $this->assertEquals('Шевченком', $output->familyName);
     }
 
-    public function testInLocativeForMale(): void
+    public function testInLocativeForMale() : void
     {
         $input = new DeclensionInput(GrammaticalGender::MASCULINE, 'Тарас', 'Григорович', 'Шевченко');
         $output = $this->inflector->inLocative($input);
@@ -78,7 +78,7 @@ class InflectorTest extends TestCase
         $this->assertEquals('Шевченкові', $output->familyName);
     }
 
-    public function testInVocativeForMale(): void
+    public function testInVocativeForMale() : void
     {
         $input = new DeclensionInput(GrammaticalGender::MASCULINE, 'Тарас', 'Григорович', 'Шевченко');
         $output = $this->inflector->inVocative($input);
@@ -88,11 +88,11 @@ class InflectorTest extends TestCase
         $this->assertEquals('Шевченку', $output->familyName);
     }
 
-    public function testGenderDetectionMale(): void
+    public function testGenderDetectionMale() : void
     {
         $input = new DeclensionInput(GrammaticalGender::FEMININE, 'Іван', 'Степанович');
         $gender = $this->inflector->detectGender($input);
-        
+
         $this->assertEquals(GrammaticalGender::MASCULINE, $gender);
     }
 }

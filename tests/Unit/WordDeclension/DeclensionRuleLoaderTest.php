@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class DeclensionRuleLoaderTest extends TestCase
 {
-    public function testLoadFromFile(): void
+    public function testLoadFromFile() : void
     {
         $rules = DeclensionRuleLoader::loadFromFile(__DIR__ . '/../../../rules/declension-rules.json');
         $this->assertIsArray($rules);

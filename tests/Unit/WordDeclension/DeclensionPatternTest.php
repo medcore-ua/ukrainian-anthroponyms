@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class DeclensionPatternTest extends TestCase
 {
-    public function testProperties(): void
+    public function testProperties() : void
     {
         $pattern = new DeclensionPattern('find', 'modify');
         $this->assertEquals('find', $pattern->find);

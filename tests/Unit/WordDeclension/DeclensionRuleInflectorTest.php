@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 class DeclensionRuleInflectorTest extends TestCase
 {
-    private function createRule(GrammaticalCases $cases, DeclensionPattern $pattern): DeclensionRule
+    private function createRule(GrammaticalCases $cases, DeclensionPattern $pattern) : DeclensionRule
     {
         return new DeclensionRule(
             'Test rule',
@@ -28,7 +28,7 @@ class DeclensionRuleInflectorTest extends TestCase
         );
     }
 
-    public function testEmptyCommandsArrayReturnsOriginalWord(): void
+    public function testEmptyCommandsArrayReturnsOriginalWord() : void
     {
         $cases = new GrammaticalCases([]); // empty
         $pattern = new DeclensionPattern('', '');
@@ -36,11 +36,11 @@ class DeclensionRuleInflectorTest extends TestCase
 
         $inflector = new DeclensionRuleInflector($rule);
         $result = $inflector->inflect('Тест', GrammaticalCase::GENITIVE);
-        
+
         $this->assertEquals('Тест', $result);
     }
 
-    public function testEmptyCommandsReturnsOriginalWord(): void
+    public function testEmptyCommandsReturnsOriginalWord() : void
     {
         $cases = new GrammaticalCases(['genitive' => [[]]]); // empty commands array inside
         $pattern = new DeclensionPattern('', '');
@@ -48,11 +48,11 @@ class DeclensionRuleInflectorTest extends TestCase
 
         $inflector = new DeclensionRuleInflector($rule);
         $result = $inflector->inflect('Тест', GrammaticalCase::GENITIVE);
-        
+
         $this->assertEquals('Тест', $result);
     }
 
-    public function testNoCommandDataForGroupLeavesValueUnchanged(): void
+    public function testNoCommandDataForGroupLeavesValueUnchanged() : void
     {
         $cases = new GrammaticalCases([
             'genitive' => [[
@@ -64,11 +64,11 @@ class DeclensionRuleInflectorTest extends TestCase
 
         $inflector = new DeclensionRuleInflector($rule);
         $result = $inflector->inflect('Тест', GrammaticalCase::GENITIVE);
-        
+
         $this->assertEquals('Тест', $result);
     }
 
-    public function testNonIndexedCommandsArrayReturnsOriginalWord(): void
+    public function testNonIndexedCommandsArrayReturnsOriginalWord() : void
     {
         // Commands array exists, but index 0 is not set
         $cases = new GrammaticalCases(['genitive' => ['wrong_index' => []]]);
@@ -77,7 +77,7 @@ class DeclensionRuleInflectorTest extends TestCase
 
         $inflector = new DeclensionRuleInflector($rule);
         $result = $inflector->inflect('Тест', GrammaticalCase::GENITIVE);
-        
+
         $this->assertEquals('Тест', $result);
     }
 }

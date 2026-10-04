@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class InflectionCommandActionTest extends TestCase
 {
-    public function testEnumValues(): void
+    public function testEnumValues() : void
     {
         $this->assertEquals('append', InflectionCommandAction::APPEND->value);
     }

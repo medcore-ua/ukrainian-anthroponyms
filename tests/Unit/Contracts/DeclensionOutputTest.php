@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class DeclensionOutputTest extends TestCase
 {
-    public function testDeclensionOutputProperties(): void
+    public function testDeclensionOutputProperties() : void
     {
         $output = new DeclensionOutput('Ім\'я', 'По батькові', 'Прізвище');
         $this->assertEquals('Ім\'я', $output->givenName);
