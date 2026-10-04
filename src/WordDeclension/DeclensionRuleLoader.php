@@ -33,6 +33,7 @@ class DeclensionRuleLoader
         $wordClass = WordClass::from(is_scalar($wordClassVal) ? (string) $wordClassVal : '');
 
         $genderData = isset($data['gender']) && is_array($data['gender']) ? $data['gender'] : [];
+        /** @var array<int, \MedCore\UkrainianAnthroponyms\Language\GrammaticalGender> $gender */
         $gender = array_map(fn (mixed $g) => GrammaticalGender::from(is_scalar($g) ? (string) $g : ''), $genderData);
 
         $patternData = isset($data['pattern']) && is_array($data['pattern']) ? $data['pattern'] : [];
@@ -42,13 +43,18 @@ class DeclensionRuleLoader
         /** @var array<string, array<mixed>> $casesData */
         $casesData = isset($data['grammaticalCases']) && is_array($data['grammaticalCases']) ? $data['grammaticalCases'] : [];
 
+        /** @var array<int, string> $examples */
+        $examples = isset($data['examples']) && is_array($data['examples']) ? $data['examples'] : [];
+        /** @var array<int, int|string> $appType */
+        $appType = isset($data['applicationType']) && is_array($data['applicationType']) ? $data['applicationType'] : [];
+
         return new DeclensionRule(
             description: isset($data['description']) && is_string($data['description']) ? $data['description'] : '',
-            examples: isset($data['examples']) && is_array($data['examples']) ? $data['examples'] : [],
+            examples: $examples,
             wordClass: $wordClass,
             gender: $gender,
             priority: isset($data['priority']) && is_numeric($data['priority']) ? (int) $data['priority'] : 0,
-            applicationType: isset($data['applicationType']) && is_array($data['applicationType']) ? $data['applicationType'] : [],
+            applicationType: $appType,
             pattern: new DeclensionPattern($find, $modify),
             grammaticalCases: new GrammaticalCases($casesData),
         );
