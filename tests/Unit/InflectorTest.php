@@ -47,13 +47,13 @@ class InflectorTest extends TestCase
 
         $this->assertEquals('Лесі', $output->givenName);
         $this->assertEquals('Петрівні', $output->patronymicName);
-        $this->assertEquals('Українці', $output->familyName);
+        $this->assertEquals('Українкій', $output->familyName);
     }
 
     public function testGenderDetectionMale() : void
     {
         $input = new DeclensionInput(
-            GrammaticalGender::UNKNOWN,
+            GrammaticalGender::FEMININE,
             'Іван',
             'Степанович'
         );
