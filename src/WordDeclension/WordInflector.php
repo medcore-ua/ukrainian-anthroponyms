@@ -11,9 +11,12 @@ use MedCore\UkrainianAnthroponyms\WordDeclension\Enums\ApplicationType;
 
 class WordInflector
 {
-    /** @var array<DeclensionRule> */
+    /** @var array<int, DeclensionRule> */
     private readonly array $rules;
 
+    /**
+     * @param array<int, DeclensionRule> $rules
+     */
     public function __construct(array $rules)
     {
         usort($rules, fn (DeclensionRule $a, DeclensionRule $b) => $b->priority - $a->priority);
@@ -37,7 +40,7 @@ class WordInflector
         return (new DeclensionRuleInflector($rule))->inflect($word, $grammaticalCase);
     }
 
-    /** @return array<DeclensionRule> */
+    /** @return array<int, DeclensionRule> */
     private function findMatchingRules(
         string $word,
         GrammaticalCase $grammaticalCase,
@@ -45,7 +48,7 @@ class WordInflector
         ?WordClass $wordClass,
         ?ApplicationType $applicationType,
     ) : array {
-        return array_values(array_filter($this->rules, function (DeclensionRule $rule) use ($word, $gender, $wordClass, $applicationType) {
+        return array_values(array_filter($this->rules, function (DeclensionRule $rule) use ($word, $gender, $wordClass, $applicationType) : bool {
             // Gender check
             if (! in_array($gender, $rule->gender, true)) {
                 return false;
@@ -54,7 +57,7 @@ class WordInflector
             // Application type check
             if (null !== $applicationType) {
                 if (! empty($rule->applicationType)) {
-                    $appTypes = array_map(fn ($t) => ApplicationType::from($t), $rule->applicationType);
+                    $appTypes = array_map(fn (int|string $t) => ApplicationType::from($t), $rule->applicationType);
                     if (! in_array($applicationType, $appTypes, true)) {
                         return false;
                     }
