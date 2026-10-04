@@ -45,3 +45,24 @@ jobs:
         with:
           name: clover-report
           path: clover.xml
+
+  coverage:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download coverage artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: clover-report
+
+      - name: Upload coverage to Codecov
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        if: ${{ env.CODECOV_TOKEN != '' }}
+        continue-on-error: true
+        uses: codecov/codecov-action@v5
+        with:
+          files: clover.xml
+          token: ${{ env.CODECOV_TOKEN }}
