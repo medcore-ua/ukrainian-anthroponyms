@@ -27,7 +27,7 @@ class FamilyNameInflector extends NameInflector
         GrammaticalCase $grammaticalCase,
         bool $isLastWord = true,
     ) : string {
-        if (!$isLastWord && Linguistics::isMonosyllable($familyName)) {
+        if (! $isLastWord && Linguistics::isMonosyllable($familyName)) {
             return $familyName;
         }
 

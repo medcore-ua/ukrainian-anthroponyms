@@ -18,7 +18,7 @@ class DeclensionRuleInflector
     {
         $commandsArray = $this->rule->grammaticalCases->forCase($grammaticalCase);
 
-        if (empty($commandsArray) || !isset($commandsArray[0])) {
+        if (empty($commandsArray) || ! isset($commandsArray[0])) {
             return $word;
         }
 

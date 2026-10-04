@@ -47,15 +47,15 @@ class WordInflector
     ) : array {
         return array_values(array_filter($this->rules, function (DeclensionRule $rule) use ($word, $gender, $wordClass, $applicationType) {
             // Gender check
-            if (!in_array($gender, $rule->gender, true)) {
+            if (! in_array($gender, $rule->gender, true)) {
                 return false;
             }
 
             // Application type check
             if (null !== $applicationType) {
-                if (!empty($rule->applicationType)) {
+                if (! empty($rule->applicationType)) {
                     $appTypes = array_map(fn ($t) => ApplicationType::from($t), $rule->applicationType);
-                    if (!in_array($applicationType, $appTypes, true)) {
+                    if (! in_array($applicationType, $appTypes, true)) {
                         return false;
                     }
                 }
@@ -63,7 +63,7 @@ class WordInflector
 
             // Pattern check
             $pattern = '/' . $rule->pattern->find . '/iu';
-            if (@!preg_match($pattern, $word)) {
+            if (@! preg_match($pattern, $word)) {
                 return false;
             }
 
