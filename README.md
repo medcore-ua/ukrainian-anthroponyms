@@ -14,7 +14,7 @@ A PHP library for declension of Ukrainian anthroponyms (names, patronymics, and 
 - **Gender Detection**: Automatic gender detection based on given name and patronymic endings.
 - **Multiple Name Types**: Handles given names, patronymics, and family names.
 - **Ukrainian Rules**: Built-in declension rules for Ukrainian language patterns.
-- **PSR-16 Compatible**: Follows PHP-FIG standards for interoperability.
+- **PSR-4 Compatible**: Follows PHP-FIG standards for autoloading.
 
 ## Installation
 
