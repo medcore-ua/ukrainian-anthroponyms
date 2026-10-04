@@ -1,0 +1,47 @@
+name: PHP Unit Tests
+
+on:
+  push:
+    branches: [ "main", "epic/**", "feature/**", "fix/**", "refactor/**" ]
+  pull_request:
+    branches: [ "main", "epic/**" ]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: xdebug
+
+      - name: Validate composer.json
+        run: composer validate --strict
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Run PHPUnit with coverage
+        run: vendor/bin/phpunit --coverage-clover clover.xml --display-warnings
+        env:
+          XDEBUG_MODE: coverage
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clover-report
+          path: clover.xml
