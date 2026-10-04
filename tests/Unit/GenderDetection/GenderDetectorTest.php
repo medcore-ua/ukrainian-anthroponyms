@@ -41,4 +41,32 @@ class GenderDetectorTest extends TestCase
         $input = new DeclensionInput(GrammaticalGender::MASCULINE, null, null, 'Шевченко');
         $this->assertNull($this->detector->detect($input));
     }
+
+    public function testConstructorThrowsOnMissingGivenNameRules() : void
+    {
+        $file = __DIR__ . '/../../../rules/given-name-rules.json';
+        chmod($file, 000);
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage('Failed to read given-name-rules.json');
+
+        try {
+            @new GenderDetector();
+        } finally {
+            chmod($file, 0644);
+        }
+    }
+
+    public function testConstructorThrowsOnMissingPatronymicRules() : void
+    {
+        $file = __DIR__ . '/../../../rules/patronymic-name-rules.json';
+        chmod($file, 000);
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage('Failed to read patronymic-name-rules.json');
+
+        try {
+            @new GenderDetector();
+        } finally {
+            chmod($file, 0644);
+        }
+    }
 }
