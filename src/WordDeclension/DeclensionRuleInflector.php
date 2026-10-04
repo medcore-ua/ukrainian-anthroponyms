@@ -23,7 +23,7 @@ class DeclensionRuleInflector
         }
 
         $commands = $commandsArray[0];
-        if (empty($commands)) {
+        if (empty($commands) || ! is_array($commands)) {
             return $word;
         }
 
@@ -40,11 +40,15 @@ class DeclensionRuleInflector
                 $commandKey = (string) $groupIndex;
 
                 $commandData = null;
-                if (isset($commands[$commandKey])) {
+                if (isset($commands[$commandKey]) && is_array($commands[$commandKey])) {
                     $commandData = $commands[$commandKey];
                 }
 
-                if (null !== $commandData && isset($commandData['action']) && isset($commandData['value'])) {
+                if (
+                    null !== $commandData
+                    && isset($commandData['action']) && is_string($commandData['action'])
+                    && isset($commandData['value']) && is_string($commandData['value'])
+                ) {
                     $command = new InflectionCommand(
                         InflectionCommandAction::from($commandData['action']),
                         $commandData['value']
