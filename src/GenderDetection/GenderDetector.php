@@ -14,31 +14,42 @@ class GenderDetector
 
     public function __construct()
     {
-        $givenNameRules = json_decode(file_get_contents(__DIR__ . '/../../rules/given-name-rules.json'), true);
-        $patronymicNameRules = json_decode(file_get_contents(__DIR__ . '/../../rules/patronymic-name-rules.json'), true);
+        $givenContent = file_get_contents(__DIR__ . '/../../rules/given-name-rules.json');
+        if (! is_string($givenContent)) {
+            throw new \RuntimeException('Failed to read given-name-rules.json');
+        }
+        $givenNameRules = json_decode($givenContent, true, 512, JSON_THROW_ON_ERROR);
+
+        $patronymicContent = file_get_contents(__DIR__ . '/../../rules/patronymic-name-rules.json');
+        if (! is_string($patronymicContent)) {
+            throw new \RuntimeException('Failed to read patronymic-name-rules.json');
+        }
+        $patronymicNameRules = json_decode($patronymicContent, true, 512, JSON_THROW_ON_ERROR);
 
         $this->givenNameDetector = new GrammaticalGenderDetector(
-            $givenNameRules['masculine'],
-            $givenNameRules['feminine'],
+            is_array($givenNameRules) && isset($givenNameRules['masculine']) && is_string($givenNameRules['masculine']) ? $givenNameRules['masculine'] : '',
+            is_array($givenNameRules) && isset($givenNameRules['feminine']) && is_string($givenNameRules['feminine']) ? $givenNameRules['feminine'] : '',
         );
 
         $this->patronymicNameDetector = new GrammaticalGenderDetector(
-            $patronymicNameRules['masculine'],
-            $patronymicNameRules['feminine'],
+            is_array($patronymicNameRules) && isset($patronymicNameRules['masculine']) && is_string($patronymicNameRules['masculine']) ? $patronymicNameRules['masculine'] : '',
+            is_array($patronymicNameRules) && isset($patronymicNameRules['feminine']) && is_string($patronymicNameRules['feminine']) ? $patronymicNameRules['feminine'] : '',
         );
     }
 
     public function detect(DeclensionInputInterface $input) : ?GrammaticalGender
     {
-        if (null !== $input->getPatronymicName()) {
-            $result = $this->patronymicNameDetector->detect(mb_strtolower($input->getPatronymicName(), 'UTF-8'));
+        $patronymic = $input->getPatronymicName();
+        if (null !== $patronymic) {
+            $result = $this->patronymicNameDetector->detect(mb_strtolower($patronymic, 'UTF-8'));
             if (null !== $result) {
                 return GrammaticalGender::from($result);
             }
         }
 
-        if (null !== $input->getGivenName()) {
-            $result = $this->givenNameDetector->detect(mb_strtolower($input->getGivenName(), 'UTF-8'));
+        $given = $input->getGivenName();
+        if (null !== $given) {
+            $result = $this->givenNameDetector->detect(mb_strtolower($given, 'UTF-8'));
             if (null !== $result) {
                 return GrammaticalGender::from($result);
             }
