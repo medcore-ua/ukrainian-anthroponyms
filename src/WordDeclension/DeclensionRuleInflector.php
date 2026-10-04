@@ -38,14 +38,10 @@ class DeclensionRuleInflector
                 $value = $matches[$groupIndex + 1] ?? '';
 
                 $commandKey = (string) $groupIndex;
-                $debugKey = $commandKey;
 
-                // Try both string and int keys
                 $commandData = null;
-                if (isset($commands[$debugKey])) {
-                    $commandData = $commands[$debugKey];
-                } elseif (isset($commands[$groupIndex])) {
-                    $commandData = $commands[$groupIndex];
+                if (isset($commands[$commandKey])) {
+                    $commandData = $commands[$commandKey];
                 }
 
                 if (null !== $commandData && isset($commandData['action']) && isset($commandData['value'])) {
