@@ -18,5 +18,8 @@ class LetterCaseTest extends TestCase
         $this->assertEquals('ТАРАСОМ', LetterCase::copyLetterCase('ТАРАС', 'тарасом'));
         $this->assertEquals('тарасом', LetterCase::copyLetterCase('тарас', 'ТАРАСОМ'));
         $this->assertEquals('Не-Вказ', LetterCase::copyLetterCase('Не-Вказ', 'не-вказ'));
+        
+        // Title case character ǈ (U+01C8) is neither upper nor lower
+        $this->assertEquals('A', LetterCase::copyLetterCase('ǈ', 'A'));
     }
 }
