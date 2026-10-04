@@ -11,9 +11,9 @@ class DeclensionOutputTest extends TestCase
 {
     public function testDeclensionOutputProperties(): void
     {
-        $output = new DeclensionOutput('Прізвище', 'Ім\'я', 'По батькові');
-        $this->assertEquals('Прізвище', $output->familyName);
+        $output = new DeclensionOutput('Ім\'я', 'По батькові', 'Прізвище');
         $this->assertEquals('Ім\'я', $output->givenName);
         $this->assertEquals('По батькові', $output->patronymicName);
+        $this->assertEquals('Прізвище', $output->familyName);
     }
 }
