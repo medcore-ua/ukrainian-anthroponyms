@@ -6,14 +6,24 @@ namespace MedCore\UkrainianAnthroponyms\WordDeclension;
 
 class GrammaticalCases
 {
+    /** @var array<mixed> */
     public readonly array $nominative;
+    /** @var array<mixed> */
     public readonly array $genitive;
+    /** @var array<mixed> */
     public readonly array $dative;
+    /** @var array<mixed> */
     public readonly array $accusative;
+    /** @var array<mixed> */
     public readonly array $ablative;
+    /** @var array<mixed> */
     public readonly array $locative;
+    /** @var array<mixed> */
     public readonly array $vocative;
 
+    /**
+     * @param array<string, array<mixed>> $data
+     */
     public function __construct(array $data)
     {
         $this->nominative = $data['nominative'] ?? [];
@@ -25,6 +35,9 @@ class GrammaticalCases
         $this->vocative = $data['vocative'] ?? [];
     }
 
+    /**
+     * @return array<mixed>
+     */
     public function forCase(\MedCore\UkrainianAnthroponyms\Language\GrammaticalCase $case) : array
     {
         return match ($case) {
