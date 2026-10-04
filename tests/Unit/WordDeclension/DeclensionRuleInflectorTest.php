@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit;
+namespace Tests\Unit\WordDeclension;
 
 use MedCore\UkrainianAnthroponyms\Language\GrammaticalCase;
 use MedCore\UkrainianAnthroponyms\Language\WordClass;

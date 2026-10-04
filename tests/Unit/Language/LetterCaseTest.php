@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit;
+namespace Tests\Unit\Language;
 
 use MedCore\UkrainianAnthroponyms\Language\LetterCase;
 use PHPUnit\Framework\TestCase;

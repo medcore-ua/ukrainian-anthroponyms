@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit;
+namespace Tests\Unit\AnthroponymDeclension;
 
 use MedCore\UkrainianAnthroponyms\AnthroponymDeclension\GivenNameInflector;
 use MedCore\UkrainianAnthroponyms\Language\GrammaticalCase;
@@ -15,7 +15,7 @@ class NameInflectorTest extends TestCase
 {
     public function testInflectReturnsNullForNullName()
     {
-        $rules = DeclensionRuleLoader::loadFromFile(__DIR__ . '/../../rules/declension-rules.json');
+        $rules = DeclensionRuleLoader::loadFromFile(__DIR__ . '/../../../rules/declension-rules.json');
         $wordInflector = new WordInflector($rules);
         $inflector = new GivenNameInflector($wordInflector);
 

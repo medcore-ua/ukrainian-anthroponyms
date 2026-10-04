@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit;
+namespace Tests\Unit\Contracts;
 
 use MedCore\UkrainianAnthroponyms\Contracts\DeclensionInput;
 use MedCore\UkrainianAnthroponyms\Language\GrammaticalGender;
