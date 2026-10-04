@@ -29,9 +29,9 @@ class InflectorTest extends TestCase
 
         $output = $this->inflector->inGenitive($input);
 
-        $this->assertEquals('Тараса', $output->getGivenName());
-        $this->assertEquals('Григоровича', $output->getPatronymicName());
-        $this->assertEquals('Шевченка', $output->getFamilyName());
+        $this->assertEquals('Тараса', $output->givenName);
+        $this->assertEquals('Григоровича', $output->patronymicName);
+        $this->assertEquals('Шевченка', $output->familyName);
     }
 
     public function testInDativeForFemale() : void
@@ -45,9 +45,9 @@ class InflectorTest extends TestCase
 
         $output = $this->inflector->inDative($input);
 
-        $this->assertEquals('Лесі', $output->getGivenName());
-        $this->assertEquals('Петрівні', $output->getPatronymicName());
-        $this->assertEquals('Українці', $output->getFamilyName());
+        $this->assertEquals('Лесі', $output->givenName);
+        $this->assertEquals('Петрівні', $output->patronymicName);
+        $this->assertEquals('Українці', $output->familyName);
     }
 
     public function testGenderDetectionMale() : void
